@@ -133,7 +133,7 @@ export default function DashProfile() {
               Add New Article
           </Button>
         </Link> 
-        <Link to="/addsymptoms">
+        <Link to="/addsymptom">
           <Button
             type="button"
             gradientDuoTone="purpleToBlue"

@@ -64,9 +64,9 @@ export default function DashSideBar() {
         </Sidebar.Item>
       </Link>
 
-      <Link to='/dashboard?tab=crowd' key="crowd">
+      <Link to='/dashboard?tab=symptoms' key="symptoms">
         <Sidebar.Item
-          active={tab === 'crowd'}
+          active={tab === 'symptoms'}
           icon={HiOutlineInformationCircle}
           className={`hover:bg-gray-700 hover:text-white transition-all duration-200 ease-in-out 
                       ${tab === 'crowd' ? 'bg-blue-500 text-white shadow-md scale-105' : ''} p-4 mb-4`}

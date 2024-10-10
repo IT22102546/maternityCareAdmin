@@ -4,16 +4,16 @@ import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { app } from '../firebase';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // Import Quill styles
+import 'react-quill/dist/quill.snow.css'; 
 
 export default function EditArticles() {
-  const { articleId } = useParams(); // Retrieve articleId from the URL
+  const { articleId } = useParams(); 
   const [article, setArticle] = useState(null);
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [image, setImage] = useState('');
   const [newImageFile, setNewImageFile] = useState(null);
-  const [desc, setContent] = useState(''); // Add state for content
+  const [desc, setContent] = useState(''); 
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const db = getFirestore(app);
@@ -98,12 +98,16 @@ export default function EditArticles() {
 
       <div className="mb-6">
         <label className="block mb-2 font-medium text-blue-700">Category:</label>
-        <input
-          type="text"
+        <select
           className="border border-blue-300 p-2 rounded-lg w-full text-blue-700"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-        />
+        >
+          <option value="">Select Category</option>
+          <option value="Nutrition">Nutrition</option>
+          <option value="Exercises">Exercises</option>
+          <option value="Symptoms">Symptoms</option>
+        </select>
       </div>
 
       <div className="mb-6">

@@ -7,6 +7,7 @@ import AddCategory from './Pages/AddSymptoms';
 import AddArticles from './Pages/AddArticles';
 import EditArticles from './Pages/EditArticles';
 import AddSymptoms from './Pages/AddSymptoms';
+import EditSymptoms from './Pages/EditSymptoms';
 
 
 export default function App() {
@@ -19,9 +20,10 @@ export default function App() {
 
         <Route element={<PrivateRoute/>}/>
           <Route path="/dashboard" element={<DashBoard/>}/> 
-          <Route path="/addsymptoms" element={<AddSymptoms/>}/> 
+          <Route path="/addsymptom" element={<AddSymptoms/>}/> 
           <Route path="/addarticles" element={<AddArticles/>}/>
           <Route path="/edit-article/:articleId" element={<EditArticles />} />
+          <Route path="/edit-symptom/:symptomId" element={<EditSymptoms />} />
           
 
         <Route/>

@@ -133,6 +133,7 @@ export default function DashProfile() {
               Add New Article
           </Button>
         </Link> 
+
         <Link to="/addsymptom">
           <Button
             type="button"
@@ -143,6 +144,13 @@ export default function DashProfile() {
                 Add Symptoms
             </Button>
           </Link> 
+
+          <Link to="/addexercise">
+          <Button type="button" gradientDuoTone="purpleToBlue" className="w-full bg-slate-400 text-black" outline>
+              Add New Exercise
+          </Button>
+          </Link> 
+          
       </form>
         <div className="text-red-500 flex justify-between mt-5">
           <span onClick={() => setShowModel(true)} className="cursor-pointer">

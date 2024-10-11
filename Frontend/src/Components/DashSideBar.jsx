@@ -1,6 +1,6 @@
 import { Sidebar } from "flowbite-react";
 import { useEffect, useState } from "react";
-import { HiArchive, HiArrowSmRight, HiDocument, HiFolderAdd, HiGift, HiInformationCircle, HiOutlineDeviceTablet, HiOutlineInformationCircle, HiOutlineUserGroup, HiShieldCheck, HiUser, HiUserGroup} from 'react-icons/hi';
+import { HiArchive, HiArrowSmRight, HiCheck, HiDocument, HiFolderAdd, HiGift, HiInformationCircle, HiOutlineDeviceTablet, HiOutlineInformationCircle, HiOutlineUserGroup, HiShieldCheck, HiUser, HiUserGroup} from 'react-icons/hi';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { signOut } from "../redux/user/userSlice";
@@ -73,6 +73,18 @@ export default function DashSideBar() {
           as='div'
         >
           Symptoms
+        </Sidebar.Item>
+      </Link>
+
+      <Link to='/dashboard?tab=exercise' key="exercise">
+        <Sidebar.Item
+          active={tab === 'exercise'}
+          icon={HiCheck}
+          className={`hover:bg-gray-700 hover:text-white transition-all duration-200 ease-in-out 
+                      ${tab === 'crowd' ? 'bg-blue-500 text-white shadow-md scale-105' : ''} p-4 mb-4`}
+          as='div'
+        >
+          Exercise
         </Sidebar.Item>
       </Link>
 

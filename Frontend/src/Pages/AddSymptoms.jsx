@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";
@@ -136,30 +136,36 @@ export default function AddSymptoms() {
               />
             </div>
 
+            {/* Dropdown for Duration */}
             <div className="flex flex-col space-y-2">
               <label className="text-lg font-medium">Duration</label>
-              <input
-                type="text"
+              <select
                 className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Duration (e.g. First Trimester)"
                 onChange={handleChange('duration')}
-                onBlur={handleBlur('duration')}
                 value={values.duration}
                 disabled={isUploading}
-              />
+              >
+                <option value="">Select Duration</option>
+                <option value="First Trimester">First Trimester</option>
+                <option value="Second Trimester">Second Trimester</option>
+                <option value="Third Trimester">Third Trimester</option>
+              </select>
             </div>
 
+            {/* Dropdown for Month */}
             <div className="flex flex-col space-y-2">
               <label className="text-lg font-medium">Month</label>
-              <input
-                type="number"
+              <select
                 className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Month"
                 onChange={handleChange('month')}
-                onBlur={handleBlur('month')}
                 value={values.month}
                 disabled={isUploading}
-              />
+              >
+                <option value="">Select Month</option>
+                {[...Array(9).keys()].map((month) => (
+                  <option key={month + 1} value={month + 1}>{month + 1}</option>
+                ))}
+              </select>
             </div>
 
             <div className="flex flex-col space-y-2">

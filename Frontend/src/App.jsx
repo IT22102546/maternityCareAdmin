@@ -10,6 +10,7 @@ import AddSymptoms from './Pages/AddSymptoms';
 import EditSymptoms from './Pages/EditSymptoms';
 import AddExercise from './Pages/AddExercise';
 import EditExercise from './Pages/EditExercise';
+import SignIn from './Pages/SignIn';
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
    
       <Routes>
         <Route path="/sign-up" element={<SignUp/>}/>
+        <Route path="/" element={<SignIn/>}/>
        
 
         <Route element={<PrivateRoute/>}/>

@@ -120,30 +120,38 @@ export default function EditSymptoms() {
                 />
               </div>
 
+              {/* Dropdown for Duration */}
               <div className="flex flex-col space-y-2">
                 <label className="text-lg font-medium">Duration</label>
-                <input
-                  type="text"
+                <select
                   className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter Duration (e.g. First Trimester)"
                   onChange={handleChange('duration')}
-                  onBlur={handleBlur('duration')}
                   value={values.duration}
                   disabled={isSubmitting}
-                />
+                >
+                  <option value="">Select Duration</option>
+                  <option value="First Trimester">First Trimester</option>
+                  <option value="Second Trimester">Second Trimester</option>
+                  <option value="Third Trimester">Third Trimester</option>
+                </select>
               </div>
 
+              {/* Dropdown for Month */}
               <div className="flex flex-col space-y-2">
                 <label className="text-lg font-medium">Month</label>
-                <input
-                  type="number"
+                <select
                   className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter Month"
                   onChange={handleChange('month')}
-                  onBlur={handleBlur('month')}
                   value={values.month}
                   disabled={isSubmitting}
-                />
+                >
+                  <option value="">Select Month</option>
+                  {[...Array(9)].map((_, i) => (
+                    <option key={i + 1} value={i + 1}>
+                      {i + 1}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div className="flex flex-col space-y-2">

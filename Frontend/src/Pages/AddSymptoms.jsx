@@ -157,13 +157,13 @@ export default function AddSymptoms() {
               <label className="text-lg font-medium">Month</label>
               <select
                 className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                onChange={handleChange('month')}
+                onChange={(e) => setFieldValue('month', Number(e.target.value))} 
                 value={values.month}
                 disabled={isUploading}
               >
                 <option value="">Select Month</option>
                 {[...Array(9).keys()].map((month) => (
-                  <option key={month + 1} value={month + 1}>{month + 1}</option>
+                  <option key={month + 1} value={month + 1}>{month + 1}</option> 
                 ))}
               </select>
             </div>

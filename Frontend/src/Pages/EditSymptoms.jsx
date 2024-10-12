@@ -141,13 +141,13 @@ export default function EditSymptoms() {
                 <label className="text-lg font-medium">Month</label>
                 <select
                   className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  onChange={handleChange('month')}
+                  onChange={(e) => setFieldValue('month', Number(e.target.value))} // Convert to number
                   value={values.month}
                   disabled={isSubmitting}
                 >
                   <option value="">Select Month</option>
                   {[...Array(9)].map((_, i) => (
-                    <option key={i + 1} value={i + 1}>
+                    <option key={i + 1} value={i + 1}> {/* Keep it as number */}
                       {i + 1}
                     </option>
                   ))}
